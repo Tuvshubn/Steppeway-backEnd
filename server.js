@@ -11,8 +11,8 @@ app.use(cors({
     origin: [
         'http://localhost:5173',
         'http://localhost:3000',
-        'https://steppeway-admin.vercel.app/',
-        'https://steppeway-landing.vercel.app/',
+        'https://steppeway-admin.vercel.app',
+        'https://steppeway-landing.vercel.app',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
