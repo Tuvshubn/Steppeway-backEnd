@@ -120,29 +120,10 @@ async function initDB() {
         'Moderate',
         '2 - 12 people',
         'May - September',
-        'Camel riding on the Khongor Sand Dunes
-Night under the stars in the desert
-Visit to Yol Valley ice canyon
-Flaming Cliffs (Bayanzag)
-Home-stay with nomadic family
-Wild Bactrian camel spotting',
-        'Drive from Ulaanbaatar to Mandalgovi — first camp setup
-Flaming Cliffs (Bayanzag) — fossil beds exploration
-Khongor Sand Dunes — camel riding & sunset
-Yol Valley ice canyon hike
-Nomadic family visit — traditional meal & culture
-Return to Ulaanbaatar',
-        'All accommodation (ger camps & hotels)
-All meals during tour
-English-speaking guide
-Private 4WD vehicle
-Airport transfers
-Camel riding',
-        'International flights
-Travel insurance
-Personal expenses
-Alcohol & soft drinks
-Tips for guide & driver',
+        'Camel riding on the Khongor Sand Dunes\nNight under the stars in the desert\nVisit to Yol Valley ice canyon\nFlaming Cliffs (Bayanzag)\nHome-stay with nomadic family\nWild Bactrian camel spotting',
+        'Drive from Ulaanbaatar to Mandalgovi — first camp setup\nFlaming Cliffs (Bayanzag) — fossil beds exploration\nKhongor Sand Dunes — camel riding & sunset\nYol Valley ice canyon hike\nNomadic family visit — traditional meal & culture\nReturn to Ulaanbaatar',
+        'All accommodation (ger camps & hotels)\nAll meals during tour\nEnglish-speaking guide\nPrivate 4WD vehicle\nAirport transfers\nCamel riding',
+        'International flights\nTravel insurance\nPersonal expenses\nAlcohol & soft drinks\nTips for guide & driver',
         1
       ]
     );
