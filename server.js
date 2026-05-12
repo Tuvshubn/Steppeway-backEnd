@@ -30,6 +30,7 @@ app.use('/api/about', require('./routes/about'));
 app.use('/api/tours', require('./routes/tours'));
 app.use('/api/tours/:tourId/days', require('./routes/tour_days'));
 app.use('/api/contact', require('./routes/contact'));
+app.use('/api/testimonials', require('./routes/testimonials'));
 
 app.get('/', (req, res) => res.json({ status: 'Travel API running' }));
 
