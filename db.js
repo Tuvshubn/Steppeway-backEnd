@@ -100,7 +100,54 @@ async function initDB() {
     ['+976 9900 0000', 'info@mongoltravel.mn', 'Улаанбаатар хот', 'Ulaanbaatar, Mongolia']
   );
 
-  // Tours are managed via admin panel — no seed data
+  // Add one sample tour if none exist (can be deleted/replaced from admin)
+  const tourCount = await pool.query('SELECT COUNT(*) as c FROM tours');
+  if (parseInt(tourCount.rows[0].c) === 0) {
+    await pool.query(
+      `INSERT INTO tours (title_mn, title_en, description_mn, description_en,
+        price, duration_mn, duration_en, tour_type, difficulty, group_size, season,
+        highlights, itinerary, included, not_included, is_active)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)`,
+      [
+        'Говийн Элсэн Манхан',
+        'Gobi Desert Dunes Adventure',
+        'Монголын алдарт Говь цөлөөр аялж, элсэн манхан дээр унтаж, нутгийн малчдын гэр бүлтэй танилцана.',
+        'Explore the legendary Mongolian Gobi Desert, sleep under the stars on vast sand dunes, and connect with nomadic families in their traditional gers.',
+        'From $580',
+        '6 хоног 5 шөнө',
+        '6 Days / 5 Nights',
+        'Adventure',
+        'Moderate',
+        '2 - 12 people',
+        'May - September',
+        'Camel riding on the Khongor Sand Dunes
+Night under the stars in the desert
+Visit to Yol Valley ice canyon
+Flaming Cliffs (Bayanzag)
+Home-stay with nomadic family
+Wild Bactrian camel spotting',
+        'Drive from Ulaanbaatar to Mandalgovi — first camp setup
+Flaming Cliffs (Bayanzag) — fossil beds exploration
+Khongor Sand Dunes — camel riding & sunset
+Yol Valley ice canyon hike
+Nomadic family visit — traditional meal & culture
+Return to Ulaanbaatar',
+        'All accommodation (ger camps & hotels)
+All meals during tour
+English-speaking guide
+Private 4WD vehicle
+Airport transfers
+Camel riding',
+        'International flights
+Travel insurance
+Personal expenses
+Alcohol & soft drinks
+Tips for guide & driver',
+        1
+      ]
+    );
+    console.log('Sample tour added');
+  }
 
   console.log('Database ready');
 }
