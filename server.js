@@ -28,6 +28,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/hero', require('./routes/hero'));
 app.use('/api/about', require('./routes/about'));
 app.use('/api/tours', require('./routes/tours'));
+app.use('/api/tours/:tourId/days', require('./routes/tour_days'));
 app.use('/api/contact', require('./routes/contact'));
 
 app.get('/', (req, res) => res.json({ status: 'Travel API running' }));
