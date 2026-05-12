@@ -100,19 +100,7 @@ async function initDB() {
     ['+976 9900 0000', 'info@mongoltravel.mn', 'Улаанбаатар хот', 'Ulaanbaatar, Mongolia']
   );
 
-  const tours = await pool.query('SELECT COUNT(*) as c FROM tours');
-  if (!parseInt(tours.rows[0].c)) {
-    for (const d of [
-      ['Говийн Аялал','Gobi Desert Tour','Говь цөлөөр аялах гайхалтай туршлага.','Amazing journey through the Gobi Desert.','$450','5 хоног','5 Days'],
-      ['Хөвсгөл Нуур','Khuvsgul Lake Tour','Монголын тэнгис хэмээн нэрлэгддэг нуур.','The sea of Mongolia.','$380','4 хоног','4 Days'],
-      ['Хархорум','Kharkhorin Tour','Эртний нийслэл Хархорумд зочлох.','Visit the ancient capital.','$290','3 хоног','3 Days'],
-    ]) {
-      await pool.query(
-        'INSERT INTO tours (title_mn,title_en,description_mn,description_en,price,duration_mn,duration_en) VALUES ($1,$2,$3,$4,$5,$6,$7)',
-        d
-      );
-    }
-  }
+  // Tours are managed via admin panel — no seed data
 
   console.log('Database ready');
 }
